@@ -17,7 +17,7 @@ sudo apt install -y \
     unzip
 
 BOOST_VER=1_83_0
-BOOST_DIR=boost$BOOST_VER
+BOOST_DIR=boost_$BOOST_VER
 
 if [ ! -d "$BOOST_DIR" ]; then
     wget -c https://sourceforge.net/projects/boost/files/boost/1.83.0/boost_1_83_0.tar.bz2
