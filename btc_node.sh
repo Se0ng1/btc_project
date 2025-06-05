@@ -55,7 +55,7 @@ mkdir -p ./bit_data
     -rpcbind=0.0.0.0 &
 sleep 3
 
-cd op_cat_test || cargo run
+cd op_cat_test && cargo run
 
 
 # if ./bitcoin-core-cat/src/bitcoin-cli \
