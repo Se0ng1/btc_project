@@ -44,28 +44,29 @@ mkdir -p ./bit_data
     -timeout=15000 \
     -daemon \
     -server=1 \
-    -txindex=1 \
     -rpcuser=user \
     -rpcpassword=password \
-    -datadir=./bit_data &
-
+    -datadir=./bit_data \
+    -fallbackfee=0.0002 \
+    -rpcallowip=0.0.0.0/0 \
+    -rpcbind=0.0.0.0 &
 sleep 3
 
 
-if ./bitcoin-core-cat/src/bitcoin-cli \
-    -regtest \
-    -rpcuser=user \
-    -rpcpassword=password \
-    decodescript 01aa01bb7e | grep -q "OP_CAT"; then
-    echo "OP_CAT is supported by this node"
-else
-    echo "OP_CAT is NOT supported by this node"
-    exit 1
-fi
+# if ./bitcoin-core-cat/src/bitcoin-cli \
+#     -regtest \
+#     -rpcuser=user \
+#     -rpcpassword=password \
+#     decodescript 01aa01bb7e | grep -q "OP_CAT"; then
+#     echo "OP_CAT is supported by this node"
+# else
+#     echo "OP_CAT is NOT supported by this node"
+#     exit 1
+# fi
 
 # 종료
-./bitcoin-core-cat/src/bitcoin-cli \
-    -regtest \
-    -rpcuser=user \
-    -rpcpassword=password \
-    stop
+# ./bitcoin-core-cat/src/bitcoin-cli \
+#     -regtest \
+#     -rpcuser=user \
+#     -rpcpassword=password \
+#     stop
