@@ -14,7 +14,10 @@ sudo apt install -y \
     bison \
     curl \
     wget \
-    unzip
+    unzip \
+    rustup 
+
+rustup default stable
 
 BOOST_VER=1_83_0
 BOOST_DIR=boost_$BOOST_VER
@@ -51,6 +54,8 @@ mkdir -p ./bit_data
     -rpcallowip=0.0.0.0/0 \
     -rpcbind=0.0.0.0 &
 sleep 3
+
+cd op_cat_test || cargo run
 
 
 # if ./bitcoin-core-cat/src/bitcoin-cli \
