@@ -70,8 +70,8 @@ cd op_cat_test && cargo run
 # fi
 
 # 종료
-# ./bitcoin-core-cat/src/bitcoin-cli \
-#     -regtest \
-#     -rpcuser=user \
-#     -rpcpassword=password \
-#     stop
+ ./bitcoin-core-cat/src/bitcoin-cli \
+     -regtest \
+     -rpcuser=user \
+     -rpcpassword=password \
+     stop
