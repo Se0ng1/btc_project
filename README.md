@@ -1,1 +1,6 @@
-# BTC node 실행 및 OP_CAT 테스트
+# BTC OP_CAT test
+
+## Usage
+```
+./btc_node.sh
+```
